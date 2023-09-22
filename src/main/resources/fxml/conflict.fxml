@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="anchorPaneConflictFXML" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+            minWidth="-Infinity" prefHeight="157.0" prefWidth="386.0" xmlns="http://javafx.com/javafx/8"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RestartApplicationController">
+    <children>
+        <Label alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="27.0" layoutY="8.0"
+               nodeOrientation="LEFT_TO_RIGHT" prefHeight="107.0" prefWidth="305.0"
+               text="        Konflikt bei Datenerhebung&#10;     Daten im Zwischenspeicher von&#10;&#10;    &lt;###TAB Aktueller Spieltag###&gt;"/>
+        <Label fx:id="restartApplicationLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="64.0" layoutY="118.0"
+               text="&lt;ANWENDUNG JETZT NEU STARTEN&gt;">
+            <cursor>
+                <Cursor fx:constant="DISAPPEAR"/>
+            </cursor>
+            <effect>
+                <InnerShadow/>
+            </effect>
+        </Label>
+    </children>
+</AnchorPane>

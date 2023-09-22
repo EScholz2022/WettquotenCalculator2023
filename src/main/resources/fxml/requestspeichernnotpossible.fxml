@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="83.0"
+            prefWidth="386.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <Label layoutX="94.0" layoutY="10.0" text="Speichervorgang nicht möglich"/>
+        <Label layoutX="83.0" layoutY="32.0" text="Daten wurden bereits gespeichert"/>
+        <Label layoutX="106.0" layoutY="56.0" prefHeight="27.0" prefWidth="228.0"
+               text="&lt;VorhersageSpieltagXX.xls&gt;">
+            <cursor>
+                <Cursor fx:constant="DISAPPEAR"/>
+            </cursor>
+            <effect>
+                <InnerShadow/>
+            </effect>
+        </Label>
+    </children>
+</AnchorPane>

@@ -1,0 +1,680 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="793.0"
+      prefWidth="1054.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="controller.StartPageNewController">
+    <children>
+        <TabPane layoutX="21.0" layoutY="27.0" prefHeight="619.0" prefWidth="1022.0" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab fx:id="AktuelleTabelleMenuTab" text="Aktuelle Tabelle">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="580.0" prefWidth="975.0">
+                            <children>
+                                <TableView fx:id="mainTable" layoutX="7.0" layoutY="12.0" prefHeight="557.0"
+                                           prefWidth="1009.0">
+                                    <columns>
+                                        <TableColumn fx:id="columnMannschaft" prefWidth="193.0"
+                                                     style="-fx-alignment: CENTER;" text="Mannschaft"/>
+                                        <TableColumn fx:id="columnSpiele" minWidth="0.0" prefWidth="54.0"
+                                                     style="-fx-alignment: CENTER;" text="Spiele"/>
+                                        <TableColumn fx:id="columnSiege" minWidth="0.0" prefWidth="69.0"
+                                                     style="-fx-alignment: CENTER;" text="Siege"/>
+                                        <TableColumn fx:id="columnUnentschieden" minWidth="0.0" prefWidth="133.0"
+                                                     style="-fx-alignment: CENTER;" text="Unentschieden"/>
+                                        <TableColumn fx:id="columnNiederlagen" prefWidth="96.0"
+                                                     style="-fx-alignment: CENTER;" text="Niederlagen"/>
+                                        <TableColumn fx:id="columnTore" minWidth="0.0" prefWidth="72.0"
+                                                     style="-fx-alignment: CENTER;" text="Tore"/>
+                                        <TableColumn fx:id="columnTordifferenz" prefWidth="110.0"
+                                                     style="-fx-alignment: CENTER;" text="Tordifferenz"/>
+                                        <TableColumn fx:id="columnPunkte" prefWidth="70.0"
+                                                     style="-fx-alignment: CENTER;" text="Punkte"/>
+                                        <TableColumn fx:id="columnMarktwert" prefWidth="108.0"
+                                                     style="-fx-alignment: CENTER;" text="Marktwert"/>
+                                        <TableColumn fx:id="columnTransfers" prefWidth="101.0"
+                                                     style="-fx-alignment: CENTER;" text="Transfers"/>
+                                    </columns>
+                                </TableView>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab fx:id="AktuellerSpieltagMenuTab" text="Aktueller Spieltag">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <Group>
+                                    <children>
+                                        <Label fx:id="SaisonLabel" layoutX="14.0" layoutY="30.0" prefHeight="21.0"
+                                               prefWidth="108.0" text="Saison"/>
+                                        <Label fx:id="SpieltagLabel" layoutX="14.0" layoutY="63.0" prefHeight="21.0"
+                                               prefWidth="59.0" text="Spieltag"/>
+                                        <MenuButton fx:id="saisonMenuButton" layoutX="13.0" layoutY="24.0"
+                                                    mnemonicParsing="false" onAction="#saisonMenuButtonAction"
+                                                    prefHeight="31.0" prefWidth="201.0" text="Saison"/>
+                                        <MenuButton fx:id="spieltagMenuButton" layoutX="13.0" layoutY="58.0"
+                                                    mnemonicParsing="false" onAction="#spieltagMenuButtonAction"
+                                                    prefHeight="31.0" prefWidth="201.0" text="Spieltag"/>
+                                    </children>
+                                </Group>
+                                <Group fx:id="aktuellerSpieltagDataGroup">
+                                    <children>
+                                        <TextField fx:id="heimmannschaft2TextField" alignment="TOP_CENTER"
+                                                   layoutX="14.0" layoutY="237.0"
+                                                   onAction="#heimmannschaft2TextFieldAction" prefHeight="31.0"
+                                                   prefWidth="198.0"/>
+                                        <TextField fx:id="gastMannschaft6TextField" alignment="TOP_CENTER"
+                                                   layoutX="410.0" layoutY="420.0"
+                                                   onAction="#GastMannschaftTextField6Action" prefHeight="31.0"
+                                                   prefWidth="198.0"/>
+                                        <TextField fx:id="ergebnisSpieltag6TextField" alignment="TOP_CENTER"
+                                                   layoutX="252.0" layoutY="420.0"
+                                                   onAction="#ErgebnisSpieltagTextField6Action" prefHeight="31.0"
+                                                   prefWidth="123.0"/>
+                                        <TextField fx:id="ergebnisSpieltag3TextField" alignment="TOP_CENTER"
+                                                   layoutX="252.0" layoutY="284.0"
+                                                   onAction="#ErgebnisSpieltagTextField3Action" prefHeight="31.0"
+                                                   prefWidth="123.0"/>
+                                        <TextField fx:id="heimmannschaft4TextField" alignment="TOP_CENTER"
+                                                   layoutX="14.0" layoutY="330.0"
+                                                   onAction="#heimmannschaft4TextFieldAction" prefHeight="31.0"
+                                                   prefWidth="198.0"/>
+                                        <TextField fx:id="heimmannschaft0TextField" alignment="TOP_CENTER"
+                                                   layoutX="14.0" layoutY="141.0"
+                                                   onAction="#heimmannschaft0TextFieldAction" prefHeight="31.0"
+                                                   prefWidth="198.0"/>
+                                        <TextField fx:id="heimmannschaft7TextField" alignment="TOP_CENTER"
+                                                   layoutX="14.0" layoutY="466.0"
+                                                   onAction="#heimmannschaft7TextFieldAction" prefHeight="31.0"
+                                                   prefWidth="198.0"/>
+                                        <TextField fx:id="ansetzung0TextField" alignment="TOP_CENTER" layoutX="622.0"
+                                                   layoutY="141.0" onAction="#AnsetzungTextField0Action"
+                                                   prefHeight="31.0" prefWidth="219.0"/>
+                                        <TextField fx:id="ergebnisSpieltag0TextField" alignment="TOP_CENTER"
+                                                   layoutX="252.0" layoutY="141.0"
+                                                   onAction="#ErgebnisSpieltagTextField0Action" prefHeight="31.0"
+                                                   prefWidth="123.0"/>
+                                        <TextField fx:id="gastMannschaft2TextField" alignment="TOP_CENTER"
+                                                   layoutX="410.0" layoutY="237.0"
+                                                   onAction="#GastMannschaftTextField2Action" prefHeight="31.0"
+                                                   prefWidth="198.0"/>
+                                        <TextField fx:id="ansetzung4TextField" alignment="TOP_CENTER" layoutX="622.0"
+                                                   layoutY="330.0" onAction="#AnsetzungTextField4Action"
+                                                   prefHeight="31.0" prefWidth="215.0"/>
+                                        <TextField fx:id="gastMannschaft7TextField" alignment="TOP_CENTER"
+                                                   layoutX="410.0" layoutY="466.0"
+                                                   onAction="#GastMannschaftTextField7Action" prefHeight="31.0"
+                                                   prefWidth="198.0"/>
+                                        <TextField fx:id="heimmannschaft6TextField" alignment="TOP_CENTER"
+                                                   layoutX="14.0" layoutY="420.0"
+                                                   onAction="#heimmannschaft6TextFieldAction" prefHeight="31.0"
+                                                   prefWidth="198.0"/>
+                                        <TextField fx:id="ansetzung8TextField" alignment="TOP_CENTER" layoutX="622.0"
+                                                   layoutY="515.0" onAction="#AnsetzungTextField8Action"
+                                                   prefHeight="31.0" prefWidth="215.0"/>
+                                        <TextField fx:id="ergebnisSpieltag2TextField" alignment="TOP_CENTER"
+                                                   layoutX="252.0" layoutY="237.0"
+                                                   onAction="#ErgebnisSpieltagTextField2Action" prefHeight="31.0"
+                                                   prefWidth="123.0"/>
+                                        <TextField fx:id="ergebnisSpieltag4TextField" alignment="TOP_CENTER"
+                                                   layoutX="252.0" layoutY="330.0"
+                                                   onAction="#ErgebnisSpieltagTextField4Action" prefHeight="31.0"
+                                                   prefWidth="123.0"/>
+                                        <TextField fx:id="heimmannschaft8TextField" alignment="TOP_CENTER"
+                                                   layoutX="14.0" layoutY="515.0"
+                                                   onAction="#heimmannschaft8TextFieldAction" prefHeight="31.0"
+                                                   prefWidth="198.0"/>
+                                        <TextField fx:id="gastMannschaft1TextField" alignment="TOP_CENTER"
+                                                   layoutX="410.0" layoutY="190.0"
+                                                   onAction="#GastMannschaftTextField1Action" prefHeight="31.0"
+                                                   prefWidth="198.0"/>
+                                        <TextField fx:id="heimmannschaft1TextField" alignment="TOP_CENTER"
+                                                   layoutX="14.0" layoutY="190.0"
+                                                   onAction="#heimmannschaft1TextFieldAction" prefHeight="31.0"
+                                                   prefWidth="198.0"/>
+                                        <TextField fx:id="ansetzung2TextField" alignment="TOP_CENTER" layoutX="622.0"
+                                                   layoutY="237.0" onAction="#AnsetzungTextField2Action"
+                                                   prefHeight="31.0" prefWidth="215.0"/>
+                                        <TextField fx:id="gastMannschaft3TextField" alignment="TOP_CENTER"
+                                                   layoutX="410.0" layoutY="284.0"
+                                                   onAction="#GastMannschaftTextField3Action" prefHeight="31.0"
+                                                   prefWidth="198.0"/>
+                                        <TextField fx:id="ansetzung5TextField" alignment="TOP_CENTER" layoutX="622.0"
+                                                   layoutY="376.0" onAction="#AnsetzungTextField5Action"
+                                                   prefHeight="31.0" prefWidth="215.0"/>
+                                        <TextField fx:id="heimmannschaft5TextField" alignment="TOP_CENTER"
+                                                   layoutX="14.0" layoutY="376.0"
+                                                   onAction="#heimmannschaft5TextFieldAction" prefHeight="31.0"
+                                                   prefWidth="198.0"/>
+                                        <TextField fx:id="heimmannschaft3TextField" alignment="TOP_CENTER"
+                                                   layoutX="14.0" layoutY="284.0"
+                                                   onAction="#heimmannschaft3TextFieldAction" prefHeight="31.0"
+                                                   prefWidth="198.0"/>
+                                        <TextField fx:id="gastMannschaft4TextField" alignment="TOP_CENTER"
+                                                   layoutX="410.0" layoutY="330.0"
+                                                   onAction="#GastMannschaftTextField4Action" prefHeight="31.0"
+                                                   prefWidth="198.0"/>
+                                        <TextField fx:id="ergebnisSpieltag8TextField" alignment="TOP_CENTER"
+                                                   layoutX="252.0" layoutY="515.0"
+                                                   onAction="#ErgebnisSpieltagTextField8Action" prefHeight="31.0"
+                                                   prefWidth="123.0"/>
+                                        <TextField fx:id="ergebnisSpieltag1TextField" alignment="TOP_CENTER"
+                                                   layoutX="252.0" layoutY="190.0"
+                                                   onAction="#ErgebnisSpieltagTextField1Action" prefHeight="31.0"
+                                                   prefWidth="123.0"/>
+                                        <TextField fx:id="ansetzung6TextField" alignment="TOP_CENTER" layoutX="622.0"
+                                                   layoutY="420.0" onAction="#AnsetzungTextField6Action"
+                                                   prefHeight="31.0" prefWidth="215.0"/>
+                                        <TextField fx:id="ergebnisSpieltag5TextField" alignment="TOP_CENTER"
+                                                   layoutX="252.0" layoutY="376.0"
+                                                   onAction="#ErgebnisSpieltagTextField5Action" prefHeight="31.0"
+                                                   prefWidth="123.0"/>
+                                        <TextField id="ansetzung3TextField" fx:id="ansetzung3TextField"
+                                                   alignment="TOP_CENTER" layoutX="622.0" layoutY="284.0"
+                                                   onAction="#AnsetzungTextField3Action" prefHeight="31.0"
+                                                   prefWidth="215.0"/>
+                                        <TextField fx:id="gastMannschaft0TextField" alignment="TOP_CENTER"
+                                                   layoutX="410.0" layoutY="141.0"
+                                                   onAction="#GastMannschaftTextField0Action" prefHeight="31.0"
+                                                   prefWidth="198.0"/>
+                                        <TextField fx:id="gastMannschaft5TextField" alignment="TOP_CENTER"
+                                                   layoutX="410.0" layoutY="376.0"
+                                                   onAction="#GastMannschaftTextField5Action" prefHeight="31.0"
+                                                   prefWidth="198.0"/>
+                                        <TextField fx:id="gastMannschaft8TextField" alignment="TOP_CENTER"
+                                                   layoutX="410.0" layoutY="515.0"
+                                                   onAction="#GastMannschaftTextField8Action" prefHeight="31.0"
+                                                   prefWidth="198.0"/>
+                                        <TextField fx:id="ergebnisSpieltag7TextField" alignment="TOP_CENTER"
+                                                   layoutX="252.0" layoutY="466.0"
+                                                   onAction="#ErgebnisSpieltagTextField7Action" prefHeight="31.0"
+                                                   prefWidth="123.0"/>
+                                        <TextField fx:id="ansetzung1TextField" alignment="TOP_CENTER" layoutX="622.0"
+                                                   layoutY="190.0" onAction="#AnsetzungTextField1Action"
+                                                   prefHeight="31.0" prefWidth="215.0"/>
+                                        <TextField fx:id="ansetzung7TextField" alignment="TOP_CENTER" layoutX="622.0"
+                                                   layoutY="466.0" onAction="#AnsetzungTextField7Action"
+                                                   prefHeight="31.0" prefWidth="215.0"/>
+                                    </children>
+                                </Group>
+                                <Group>
+                                    <children>
+                                        <Label fx:id="SenderLabel1" layoutX="854.0" layoutY="103.0"
+                                               text="Übertragung Sender"/>
+                                        <Group fx:id="uebertragungSenderGroup" layoutX="10.0">
+                                            <children>
+                                                <TextField fx:id="sender7TextField" alignment="TOP_CENTER"
+                                                           layoutX="847.0" layoutY="421.0"
+                                                           onAction="#SenderTextField7Action" prefHeight="31.0"
+                                                           prefWidth="138.0"/>
+                                                <TextField fx:id="sender5TextField" alignment="TOP_CENTER"
+                                                           layoutX="847.0" layoutY="331.0"
+                                                           onAction="#SenderTextField5Action" prefHeight="31.0"
+                                                           prefWidth="138.0"/>
+                                                <TextField fx:id="sender9TextField" alignment="TOP_CENTER"
+                                                           layoutX="848.0" layoutY="515.0"
+                                                           onAction="#SenderTextField9Action" prefHeight="31.0"
+                                                           prefWidth="138.0"/>
+                                                <TextField fx:id="sender2TextField" alignment="TOP_CENTER"
+                                                           layoutX="848.0" layoutY="191.0"
+                                                           onAction="#SenderTextField2Action" prefHeight="31.0"
+                                                           prefWidth="138.0"/>
+                                                <TextField fx:id="sender8TextField" alignment="TOP_CENTER"
+                                                           layoutX="847.0" layoutY="466.0"
+                                                           onAction="#SenderTextField8Action" prefHeight="31.0"
+                                                           prefWidth="138.0"/>
+                                                <TextField fx:id="sender1TextField" alignment="TOP_CENTER"
+                                                           layoutX="848.0" layoutY="146.0"
+                                                           onAction="#SenderTextField1Action" prefHeight="31.0"
+                                                           prefWidth="138.0"/>
+                                                <TextField fx:id="sender6TextField" alignment="TOP_CENTER"
+                                                           layoutX="847.0" layoutY="376.0"
+                                                           onAction="#SenderTextField6Action" prefHeight="31.0"
+                                                           prefWidth="138.0"/>
+                                                <TextField fx:id="sender4TextField" alignment="TOP_CENTER"
+                                                           layoutX="848.0" layoutY="290.0"
+                                                           onAction="#SenderTextField4Action" prefHeight="31.0"
+                                                           prefWidth="138.0"/>
+                                                <TextField fx:id="sender3TextField" alignment="TOP_CENTER"
+                                                           layoutX="848.0" layoutY="240.0"
+                                                           onAction="#SenderTextField3Action" prefHeight="31.0"
+                                                           prefWidth="138.0"/>
+                                            </children>
+                                        </Group>
+                                        <Button fx:id="loadDataSpieltagButton" layoutX="308.0" layoutY="35.0"
+                                                mnemonicParsing="false" onAction="#loadDataSpieltagButtonAction"
+                                                text="Lade Daten herunter"/>
+                                        <Label fx:id="AnsetzungLabel" layoutX="619.0" layoutY="103.0" text="Ansetzung"/>
+                                        <Label fx:id="GastmannschaftLabel" layoutX="410.0" layoutY="103.0"
+                                               text="Gastmannschaft"/>
+                                        <Label fx:id="ErgebnisSpielzeitLabel" layoutX="251.0" layoutY="103.0"
+                                               text="Ergebnis / Spielzeit"/>
+                                    </children>
+                                </Group>
+                                <Label fx:id="HeimmannschaftLabel" layoutX="12.0" layoutY="107.0"
+                                       text="Heimmannschaft"/>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab fx:id="SpieltagVorhersageMenuTab" text="Spieltag Vorhersage">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <Group fx:id="SaisonSpieltagGroup">
+                                    <children>
+                                        <TextField fx:id="spieltagVorhersageTextField" alignment="CENTER"
+                                                   layoutX="113.0" layoutY="58.0" prefHeight="31.0" prefWidth="38.0"/>
+                                        <Label fx:id="SaisonVorherSageLabel" layoutX="14.0" layoutY="30.0"
+                                               prefHeight="21.0" prefWidth="108.0" text="Saison"/>
+                                        <Label fx:id="SpieltagVorhersageLabel" layoutX="14.0" layoutY="63.0"
+                                               prefHeight="21.0" prefWidth="59.0" text="Spieltag"/>
+                                        <TextField fx:id="seasonVorhersageTextField" alignment="CENTER" layoutX="113.0"
+                                                   layoutY="25.0" prefHeight="31.0" prefWidth="137.0"/>
+                                    </children>
+                                </Group>
+                                <Button fx:id="loadSpieltagVorhersageDataButton" layoutX="308.0" layoutY="35.0"
+                                        mnemonicParsing="false" onAction="#loadSpieltagVorhersageDataButtonAction"
+                                        text="Nächsten Spieltag Laden"/>
+                                <Label fx:id="AnsetzungLabel1" layoutX="470.0" layoutY="119.0" text="Ansetzung"/>
+                                <Label fx:id="HeimmannschaftLabel1" layoutX="24.0" layoutY="119.0"
+                                       text="Heimmannschaft"/>
+                                <Label fx:id="GastmannschaftLabel1" layoutX="250.0" layoutY="118.0"
+                                       text="Gastmannschaft"/>
+                                <Button fx:id="berechneSpieltagErgebnisseVorhersageButton" layoutX="732.0"
+                                        layoutY="35.0" mnemonicParsing="false"
+                                        onAction="#berechneSpieltagErgebnisseVorhersageButtonAction"
+                                        text="Spieltag Ergebnisse berechnen"/>
+                                <VBox fx:id="vorhersageTextFields" alignment="CENTER" layoutX="709.0" layoutY="151.0"
+                                      prefHeight="240.0" prefWidth="310.0" spacing="22.0">
+                                    <children>
+                                        <TextField fx:id="ergebnisVorhersage0TextField" alignment="TOP_CENTER"
+                                                   layoutY="151.0" prefHeight="31.0" prefWidth="219.0"/>
+                                        <TextField fx:id="ergebnisVorhersage1TextField" alignment="TOP_CENTER"
+                                                   prefHeight="31.0" prefWidth="123.0"/>
+                                        <TextField fx:id="ergebnisVorhersage2TextField" alignment="TOP_CENTER"
+                                                   prefHeight="31.0" prefWidth="123.0"/>
+                                        <TextField fx:id="ergebnisVorhersage3TextField" alignment="TOP_CENTER"
+                                                   prefHeight="31.0" prefWidth="123.0"/>
+                                        <TextField fx:id="ergebnisVorhersage4TextField" alignment="TOP_CENTER"
+                                                   prefHeight="31.0" prefWidth="123.0"/>
+                                        <TextField fx:id="ergebnisVorhersage5TextField" alignment="TOP_CENTER"
+                                                   prefHeight="31.0" prefWidth="123.0"/>
+                                        <TextField fx:id="ergebnisVorhersage6TextField" alignment="TOP_CENTER"
+                                                   prefHeight="31.0" prefWidth="123.0"/>
+                                        <TextField fx:id="ergebnisVorhersage7TextField" alignment="TOP_CENTER"
+                                                   prefHeight="31.0" prefWidth="123.0"/>
+                                        <TextField fx:id="ergebnisVorhersage8TextField" alignment="TOP_CENTER"
+                                                   prefHeight="31.0" prefWidth="123.0"/>
+                                    </children>
+                                </VBox>
+                                <Group fx:id="HeimGastTextFields">
+                                    <children>
+                                        <TextField fx:id="heimmannschaft0VorhersageTextField1" alignment="TOP_CENTER"
+                                                   layoutX="24.0" layoutY="151.0" prefHeight="31.0" prefWidth="198.0"/>
+                                        <TextField fx:id="gastmannschaft0VorhersageTextField1" alignment="TOP_CENTER"
+                                                   layoutX="250.0" layoutY="151.0" prefHeight="31.0" prefWidth="198.0"/>
+                                        <TextField fx:id="heimmannschaft1VorhersageTextField1" alignment="TOP_CENTER"
+                                                   layoutX="24.0" layoutY="200.0" prefHeight="31.0" prefWidth="198.0"/>
+                                        <TextField fx:id="gastmannschaft1VorhersageTextField1" alignment="TOP_CENTER"
+                                                   layoutX="250.0" layoutY="200.0" prefHeight="31.0" prefWidth="198.0"/>
+                                        <TextField fx:id="heimmannschaft2VorhersageTextField1" alignment="TOP_CENTER"
+                                                   layoutX="24.0" layoutY="247.0" prefHeight="31.0" prefWidth="198.0"/>
+                                        <TextField fx:id="gastmannschaft2VorhersageTextField1" alignment="TOP_CENTER"
+                                                   layoutX="250.0" layoutY="247.0" prefHeight="31.0" prefWidth="198.0"/>
+                                        <TextField fx:id="heimmannschaft3VorhersageTextField1" alignment="TOP_CENTER"
+                                                   layoutX="24.0" layoutY="294.0" prefHeight="31.0" prefWidth="198.0"/>
+                                        <TextField fx:id="gastmannschaft3VorhersageTextField1" alignment="TOP_CENTER"
+                                                   layoutX="250.0" layoutY="294.0" prefHeight="31.0" prefWidth="198.0"/>
+                                        <TextField fx:id="heimmannschaft4VorhersageTextField1" alignment="TOP_CENTER"
+                                                   layoutX="24.0" layoutY="340.0" prefHeight="31.0" prefWidth="198.0"/>
+                                        <TextField fx:id="gastmannschaft4VorhersageTextField1" alignment="TOP_CENTER"
+                                                   layoutX="250.0" layoutY="340.0" prefHeight="31.0" prefWidth="198.0"/>
+                                        <TextField fx:id="heimmannschaft5VorhersageTextField1" alignment="TOP_CENTER"
+                                                   layoutX="24.0" layoutY="386.0" prefHeight="31.0" prefWidth="198.0"/>
+                                        <TextField fx:id="gastmannschaft5VorhersageTextField1" alignment="TOP_CENTER"
+                                                   layoutX="250.0" layoutY="386.0" prefHeight="31.0" prefWidth="198.0"/>
+                                        <TextField fx:id="heimmannschaft6VorhersageTextField1" alignment="TOP_CENTER"
+                                                   layoutX="24.0" layoutY="430.0" prefHeight="31.0" prefWidth="198.0"/>
+                                        <TextField fx:id="gastmannschaft6VorhersageTextField1" alignment="TOP_CENTER"
+                                                   layoutX="250.0" layoutY="430.0" prefHeight="31.0" prefWidth="198.0"/>
+                                        <TextField fx:id="heimmannschaft7VorhersageTextField1" alignment="TOP_CENTER"
+                                                   layoutX="24.0" layoutY="476.0" prefHeight="31.0" prefWidth="198.0"/>
+                                        <TextField fx:id="gastmannschaft7VorhersageTextField1" alignment="TOP_CENTER"
+                                                   layoutX="250.0" layoutY="476.0" prefHeight="31.0" prefWidth="198.0"/>
+                                        <TextField fx:id="heimmannschaft8VorhersageTextField1" alignment="TOP_CENTER"
+                                                   layoutX="24.0" layoutY="525.0" prefHeight="31.0" prefWidth="198.0"/>
+                                        <TextField fx:id="gastmannschaft8VorhersageTextField1" alignment="TOP_CENTER"
+                                                   layoutX="250.0" layoutY="525.0" prefHeight="31.0" prefWidth="198.0"/>
+
+                                    </children>
+                                </Group>
+                                <Group fx:id="AnsetzungTextFields">
+                                    <children>
+                                        <TextField fx:id="ansetzung0VorhersageTextField" alignment="TOP_CENTER"
+                                                   layoutX="470.0" layoutY="151.0" prefHeight="31.0" prefWidth="219.0"/>
+                                        <TextField fx:id="ansetzung1VorhersageTextField" alignment="TOP_CENTER"
+                                                   layoutX="470.0" layoutY="200.0" prefHeight="31.0" prefWidth="215.0"/>
+                                        <TextField fx:id="ansetzung2VorhersageTextField" alignment="TOP_CENTER"
+                                                   layoutX="470.0" layoutY="247.0" prefHeight="31.0" prefWidth="215.0"/>
+                                        <TextField fx:id="ansetzung3VorhersageTextField" alignment="TOP_CENTER"
+                                                   layoutX="470.0" layoutY="294.0" prefHeight="31.0" prefWidth="215.0"/>
+                                        <TextField fx:id="ansetzung4VorhersageTextField" alignment="TOP_CENTER"
+                                                   layoutX="470.0" layoutY="340.0" prefHeight="31.0" prefWidth="215.0"/>
+                                        <TextField fx:id="ansetzung5VorhersageTextField" alignment="TOP_CENTER"
+                                                   layoutX="470.0" layoutY="386.0" prefHeight="31.0" prefWidth="215.0"/>
+                                        <TextField fx:id="ansetzung6VorhersageTextField" alignment="TOP_CENTER"
+                                                   layoutX="470.0" layoutY="430.0" prefHeight="31.0" prefWidth="215.0"/>
+                                        <TextField fx:id="ansetzung7VorhersageTextField" alignment="TOP_CENTER"
+                                                   layoutX="470.0" layoutY="476.0" prefHeight="31.0" prefWidth="215.0"/>
+                                        <TextField fx:id="ansetzung8VorhersageTextField" alignment="TOP_CENTER"
+                                                   layoutX="470.0" layoutY="525.0" prefHeight="31.0" prefWidth="215.0"/>
+
+                                    </children>
+                                </Group>
+                                <Label fx:id="ErgebnisVorhersageLabel" alignment="TOP_CENTER" layoutX="707.0"
+                                       layoutY="118.0" text="Ergebnis Vorhersage"/>
+                                <Button fx:id="saveSpieltagErgebnisseVorhersageButton1" layoutX="735.0" layoutY="80.0"
+                                        mnemonicParsing="false" onAction="#saveSpieltagErgebnisseVorhersageButtonAction"
+                                        text="Spieltag Ergebnisse speichern"/>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab fx:id="BasisStatistikScoreMannschaftenMenuTab" text="Basis und Statistik Score Mannschaften">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <Group fx:id="BasisScoreMannschaftTextFields">
+                                    <children>
+                                        <TextField fx:id="Mannschaft1TextField" layoutX="15.0" layoutY="90.0"
+                                                   prefHeight="31.0" prefWidth="210.0"/>
+                                        <TextField fx:id="Mannschaft2TextField" layoutX="15.0" layoutY="130.0"
+                                                   prefHeight="31.0" prefWidth="210.0"/>
+                                        <TextField fx:id="Mannschaft3TextField" layoutX="15.0" layoutY="170.0"
+                                                   prefHeight="31.0" prefWidth="210.0"/>
+                                        <TextField fx:id="Mannschaft4TextField" layoutX="15.0" layoutY="210.0"
+                                                   prefHeight="31.0" prefWidth="210.0"/>
+                                        <TextField fx:id="Mannschaft5TextField" layoutX="15.0" layoutY="250.0"
+                                                   prefHeight="31.0" prefWidth="210.0"/>
+                                        <TextField fx:id="Mannschaft6TextField" layoutX="15.0" layoutY="290.0"
+                                                   prefHeight="31.0" prefWidth="210.0"/>
+                                        <TextField fx:id="Mannschaft7TextField" layoutX="15.0" layoutY="330.0"
+                                                   prefHeight="31.0" prefWidth="210.0"/>
+                                        <TextField fx:id="Mannschaft8TextField" layoutX="15.0" layoutY="370.0"
+                                                   prefHeight="31.0" prefWidth="210.0"/>
+                                        <TextField fx:id="Mannschaft9TextField" layoutX="15.0" layoutY="410.0"
+                                                   prefHeight="31.0" prefWidth="210.0"/>
+                                        <TextField fx:id="Mannschaft10TextField" layoutX="460.0" layoutY="90.0"
+                                                   prefHeight="31.0" prefWidth="210.0"/>
+                                        <TextField fx:id="Mannschaft11TextField" layoutX="460.0" layoutY="130.0"
+                                                   prefHeight="31.0" prefWidth="210.0"/>
+                                        <TextField fx:id="Mannschaft12TextField" layoutX="460.0" layoutY="170.0"
+                                                   prefHeight="31.0" prefWidth="210.0"/>
+                                        <TextField fx:id="Mannschaft13TextField" layoutX="460.0" layoutY="210.0"
+                                                   prefHeight="31.0" prefWidth="210.0"/>
+                                        <TextField fx:id="Mannschaft14TextField" layoutX="460.0" layoutY="250.0"
+                                                   prefHeight="31.0" prefWidth="210.0"/>
+                                        <TextField fx:id="Mannschaft15TextField" layoutX="460.0" layoutY="290.0"
+                                                   prefHeight="31.0" prefWidth="210.0"/>
+                                        <TextField fx:id="Mannschaft16TextField" layoutX="460.0" layoutY="330.0"
+                                                   prefHeight="31.0" prefWidth="210.0"/>
+                                        <TextField fx:id="Mannschaft17TextField" layoutX="460.0" layoutY="370.0"
+                                                   prefHeight="31.0" prefWidth="210.0"/>
+                                        <TextField fx:id="Mannschaft18TextField" layoutX="460.0" layoutY="410.0"
+                                                   prefHeight="31.0" prefWidth="210.0"/>
+                                    </children>
+                                </Group>
+                                <Label fx:id="MannschaftStatistikScoreLabel1" layoutX="462.0" layoutY="59.0"
+                                       text="Mannschaft"/>
+                                <Label fx:id="StatistikScoreLabel1" layoutX="228.0" layoutY="59.0" prefHeight="21.0"
+                                       prefWidth="174.0" text="  Basis            Statistik"/>
+                                <Label fx:id="MannschaftStatistikScoreLabel2" layoutX="14.0" layoutY="59.0"
+                                       text="Mannschaft"/>
+                                <Button fx:id="loadDataButtonStatistik" layoutX="852.0" layoutY="14.0"
+                                        mnemonicParsing="false" onAction="#loadDataButtonStatistikAction"
+                                        prefHeight="31.0" prefWidth="156.0" text="Lade Statistik Score"/>
+                                <Label fx:id="StatistikScoreLabel11" layoutX="672.0" layoutY="60.0" prefHeight="21.0"
+                                       prefWidth="174.0" text="  Basis             Statistik"/>
+                                <Button fx:id="loadBasicScoreButton" layoutX="700.0" layoutY="14.0"
+                                        mnemonicParsing="false" onAction="#loadBasicScoreButtonAction"
+                                        text="Lade Basis Score"/>
+                                <Group fx:id="BasisScoreTextFields2">
+                                    <children>
+                                        <TextField fx:id="scoreWertTextField17" layoutX="680.0" layoutY="370.0"
+                                                   prefHeight="31.0" prefWidth="80.0"/>
+                                        <TextField fx:id="scoreWertTextField13" layoutX="680.0" layoutY="210.0"
+                                                   prefHeight="31.0" prefWidth="80.0"/>
+                                        <TextField fx:id="scoreWertTextField16" layoutX="680.0" layoutY="330.0"
+                                                   prefHeight="31.0" prefWidth="80.0"/>
+                                        <TextField fx:id="scoreWertTextField15" layoutX="680.0" layoutY="290.0"
+                                                   prefHeight="31.0" prefWidth="80.0"/>
+                                        <TextField fx:id="scoreWertTextField18" layoutX="680.0" layoutY="410.0"
+                                                   prefHeight="31.0" prefWidth="80.0"/>
+                                        <TextField fx:id="scoreWertTextField14" layoutX="680.0" layoutY="250.0"
+                                                   prefHeight="31.0" prefWidth="80.0"/>
+                                        <TextField fx:id="scoreWertTextField12" layoutX="680.0" layoutY="170.0"
+                                                   prefHeight="31.0" prefWidth="80.0"/>
+                                        <TextField fx:id="scoreWertTextField10" layoutX="680.0" layoutY="90.0"
+                                                   prefHeight="31.0" prefWidth="80.0"/>
+                                        <TextField fx:id="scoreWertTextField11" layoutX="680.0" layoutY="130.0"
+                                                   prefHeight="31.0" prefWidth="80.0"/>
+                                    </children>
+                                </Group>
+                                <Group fx:id="StatistikScoreTextFields2">
+                                    <children>
+                                        <TextField fx:id="StatistikScoreTextField15" layoutX="770.0" layoutY="290.0"
+                                                   prefHeight="31.0" prefWidth="80.0"/>
+                                        <TextField fx:id="StatistikScoreTextField14" layoutX="770.0" layoutY="250.0"
+                                                   prefHeight="31.0" prefWidth="80.0"/>
+                                        <TextField fx:id="StatistikScoreTextField11" layoutX="770.0" layoutY="130.0"
+                                                   prefHeight="31.0" prefWidth="80.0"/>
+                                        <TextField fx:id="StatistikScoreTextField17" layoutX="770.0" layoutY="370.0"
+                                                   prefHeight="31.0" prefWidth="80.0"/>
+                                        <TextField fx:id="StatistikScoreTextField10" layoutX="770.0" layoutY="90.0"
+                                                   prefHeight="31.0" prefWidth="80.0"/>
+                                        <TextField fx:id="StatistikScoreTextField16" layoutX="770.0" layoutY="330.0"
+                                                   prefHeight="31.0" prefWidth="80.0"/>
+                                        <TextField fx:id="StatistikScoreTextField18" layoutX="770.0" layoutY="410.0"
+                                                   prefHeight="31.0" prefWidth="80.0"/>
+                                        <TextField fx:id="StatistikScoreTextField12" layoutX="770.0" layoutY="170.0"
+                                                   prefHeight="31.0" prefWidth="80.0"/>
+                                        <TextField fx:id="StatistikScoreTextField13" layoutX="770.0" layoutY="210.0"
+                                                   prefHeight="31.0" prefWidth="80.0"/>
+                                    </children>
+                                </Group>
+                                <Group fx:id="StatistikScoreTextFields1">
+                                    <children>
+                                        <TextField fx:id="StatistikScoreTextField6" layoutX="323.0" layoutY="292.0"
+                                                   prefHeight="31.0" prefWidth="80.0"/>
+                                        <TextField fx:id="StatistikScoreTextField3" layoutX="323.0" layoutY="172.0"
+                                                   prefHeight="31.0" prefWidth="80.0"/>
+                                        <TextField fx:id="StatistikScoreTextField4" layoutX="323.0" layoutY="212.0"
+                                                   prefHeight="31.0" prefWidth="80.0"/>
+                                        <TextField fx:id="StatistikScoreTextField9" layoutX="323.0" layoutY="411.0"
+                                                   prefHeight="31.0" prefWidth="80.0"/>
+                                        <TextField fx:id="StatistikScoreTextField1" layoutX="323.0" layoutY="91.0"
+                                                   prefHeight="31.0" prefWidth="80.0"/>
+                                        <TextField fx:id="StatistikScoreTextField2" layoutX="323.0" layoutY="132.0"
+                                                   prefHeight="31.0" prefWidth="80.0"/>
+                                        <TextField fx:id="StatistikScoreTextField8" layoutX="323.0" layoutY="372.0"
+                                                   prefHeight="31.0" prefWidth="80.0"/>
+                                        <TextField fx:id="StatistikScoreTextField5" layoutX="323.0" layoutY="252.0"
+                                                   prefHeight="31.0" prefWidth="80.0"/>
+                                        <TextField fx:id="StatistikScoreTextField7" layoutX="323.0" layoutY="332.0"
+                                                   prefHeight="31.0" prefWidth="80.0"/>
+                                    </children>
+                                </Group>
+                                <Group fx:id="BasisScoreTextFields1">
+                                    <children>
+                                        <TextField fx:id="scoreWertTextField8" layoutX="235.0" layoutY="370.0"
+                                                   prefHeight="31.0" prefWidth="80.0"/>
+                                        <TextField fx:id="scoreWertTextField2" layoutX="235.0" layoutY="130.0"
+                                                   prefHeight="31.0" prefWidth="80.0"/>
+                                        <TextField fx:id="scoreWertTextField6" layoutX="235.0" layoutY="290.0"
+                                                   prefHeight="31.0" prefWidth="80.0"/>
+                                        <TextField fx:id="scoreWertTextField3" layoutX="235.0" layoutY="170.0"
+                                                   prefHeight="31.0" prefWidth="80.0"/>
+                                        <TextField fx:id="scoreWertTextField7" layoutX="235.0" layoutY="330.0"
+                                                   prefHeight="31.0" prefWidth="80.0"/>
+                                        <TextField fx:id="scoreWertTextField4" layoutX="235.0" layoutY="210.0"
+                                                   prefHeight="31.0" prefWidth="80.0"/>
+                                        <TextField fx:id="scoreWertTextField1" layoutX="235.0" layoutY="90.0"
+                                                   prefHeight="31.0" prefWidth="80.0"/>
+                                        <TextField fx:id="scoreWertTextField5" layoutX="235.0" layoutY="250.0"
+                                                   prefHeight="31.0" prefWidth="80.0"/>
+                                        <TextField fx:id="scoreWertTextField9" layoutX="235.0" layoutY="409.0"
+                                                   prefHeight="31.0" prefWidth="80.0"/>
+                                    </children>
+                                </Group>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab fx:id="GesamtScoreMannschaftenMenuTab" text="Gesamt Score Mannschaften">
+                    <content>
+                        <AnchorPane fx:id="anchPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0"
+                                    prefWidth="200.0">
+                            <children>
+                                <Button fx:id="loadGesamtScoreButton" layoutX="850.0" layoutY="22.0"
+                                        mnemonicParsing="false" onAction="#loadGesamtScoreButtonAction"
+                                        text="Lade Daten herunter"/>
+                                <Group fx:id="BasisScoreMannschaftTextFields2">
+                                    <children>
+                                        <TextField fx:id="Mannschaft9TextFieldGesamt" alignment="TOP_CENTER"
+                                                   layoutX="14.0" layoutY="410.0" onAction="#Mannschaft9TextFieldAction"
+                                                   prefHeight="31.0" prefWidth="210.0"/>
+                                        <TextField fx:id="Mannschaft7TextFieldGesamt" alignment="TOP_CENTER"
+                                                   layoutX="14.0" layoutY="330.0" onAction="#Mannschaft7TextFieldAction"
+                                                   prefHeight="31.0" prefWidth="210.0"/>
+                                        <TextField fx:id="Mannschaft3TextFieldGesamt" alignment="TOP_CENTER"
+                                                   layoutX="14.0" layoutY="170.0" onAction="#Mannschaft3TextFieldAction"
+                                                   prefHeight="31.0" prefWidth="210.0"/>
+                                        <TextField fx:id="Mannschaft5TextFieldGesamt" alignment="TOP_CENTER"
+                                                   layoutX="14.0" layoutY="250.0" onAction="#Mannschaft5TextFieldAction"
+                                                   prefHeight="31.0" prefWidth="210.0"/>
+                                        <TextField fx:id="Mannschaft2TextFieldGesamt" alignment="TOP_CENTER"
+                                                   layoutX="14.0" layoutY="130.0" onAction="#Mannschaft2TextFieldAction"
+                                                   prefHeight="31.0" prefWidth="210.0"/>
+                                        <TextField fx:id="Mannschaft6TextFieldGesamt" alignment="TOP_CENTER"
+                                                   layoutX="14.0" layoutY="290.0" onAction="#Mannschaft6TextFieldAction"
+                                                   prefHeight="31.0" prefWidth="210.0"/>
+                                        <TextField fx:id="Mannschaft1TextFieldGesamt" alignment="TOP_CENTER"
+                                                   layoutX="14.0" layoutY="90.0" onAction="#Mannschaft1TextFieldAction"
+                                                   prefHeight="31.0" prefWidth="210.0"/>
+                                        <TextField fx:id="Mannschaft4TextFieldGesamt" alignment="TOP_CENTER"
+                                                   layoutX="14.0" layoutY="210.0" onAction="#Mannschaft4TextFieldAction"
+                                                   prefHeight="31.0" prefWidth="210.0"/>
+                                        <TextField fx:id="Mannschaft8TextFieldGesamt" alignment="TOP_CENTER"
+                                                   layoutX="14.0" layoutY="370.0" onAction="#Mannschaft8TextFieldAction"
+                                                   prefHeight="31.0" prefWidth="210.0"/>
+                                        <TextField fx:id="Mannschaft16TextFieldGesamt" alignment="TOP_CENTER"
+                                                   layoutX="440.0" layoutY="330.0" prefHeight="31.0" prefWidth="210.0"/>
+                                        <TextField fx:id="Mannschaft12TextFieldGesamt" alignment="TOP_CENTER"
+                                                   layoutX="440.0" layoutY="170.0" prefHeight="31.0" prefWidth="210.0"/>
+                                        <TextField fx:id="Mannschaft14TextFieldGesamt" alignment="TOP_CENTER"
+                                                   layoutX="440.0" layoutY="250.0" prefHeight="31.0" prefWidth="210.0"/>
+                                        <TextField fx:id="Mannschaft15TextFieldGesamt" alignment="TOP_CENTER"
+                                                   layoutX="440.0" layoutY="290.0" prefHeight="31.0" prefWidth="210.0"/>
+                                        <TextField fx:id="Mannschaft11TextFieldGesamt" alignment="TOP_CENTER"
+                                                   layoutX="440.0" layoutY="130.0" prefHeight="31.0" prefWidth="210.0"/>
+                                        <TextField fx:id="Mannschaft13TextFieldGesamt" alignment="TOP_CENTER"
+                                                   layoutX="440.0" layoutY="210.0" prefHeight="31.0" prefWidth="210.0"/>
+                                        <TextField fx:id="Mannschaft10TextFieldGesamt" alignment="TOP_CENTER"
+                                                   layoutX="440.0" layoutY="90.0" prefHeight="31.0" prefWidth="210.0"/>
+                                        <TextField fx:id="Mannschaft17TextFieldGesamt" alignment="TOP_CENTER"
+                                                   layoutX="440.0" layoutY="370.0" prefHeight="31.0" prefWidth="210.0"/>
+                                        <TextField fx:id="Mannschaft18TextFieldGesamt" alignment="TOP_CENTER"
+                                                   layoutX="440.0" layoutY="410.0" prefHeight="31.0" prefWidth="210.0"/>
+                                    </children>
+                                </Group>
+                                <Label fx:id="MannschaftBasisScoreLabel2" layoutX="439.0" layoutY="59.0"
+                                       text="Mannschaft"/>
+                                <Label fx:id="MannschaftBasisScoreLabel1" layoutX="14.0" layoutY="59.0"
+                                       text="Mannschaft"/>
+                                <Label fx:id="WertGesamtScoreLabel1" layoutX="263.0" layoutY="56.0" prefHeight="24.0"
+                                       prefWidth="139.0" text="Score Wert Gesamt"/>
+                                <Label fx:id="WertGesamtScoreLabel11" layoutX="691.0" layoutY="58.0" prefHeight="24.0"
+                                       prefWidth="139.0" text="Score Wert Gesamt"/>
+                                <Group fx:id="GesamtScoreTextFields">
+                                    <children>
+                                        <TextField fx:id="scoreGesamtWertTextField3" alignment="TOP_CENTER"
+                                                   layoutX="260.0" layoutY="170.0" onAction="#scoreWertTextField3Action"
+                                                   prefHeight="31.0" prefWidth="123.0"/>
+                                        <TextField fx:id="scoreGesamtWertTextField1" alignment="TOP_CENTER"
+                                                   layoutX="260.0" layoutY="90.0" onAction="#scoreWertTextField1Action"
+                                                   prefHeight="31.0" prefWidth="123.0"/>
+                                        <TextField fx:id="scoreGesamtWertTextField7" alignment="TOP_CENTER"
+                                                   layoutX="260.0" layoutY="330.0" onAction="#scoreWertTextField7Action"
+                                                   prefHeight="31.0" prefWidth="123.0"/>
+                                        <TextField fx:id="scoreGesamtWertTextField9" alignment="TOP_CENTER"
+                                                   layoutX="260.0" layoutY="410.0" onAction="#scoreWertTextField9Action"
+                                                   prefHeight="31.0" prefWidth="123.0"/>
+                                        <TextField fx:id="scoreGesamtWertTextField6" alignment="TOP_CENTER"
+                                                   layoutX="260.0" layoutY="290.0" onAction="#scoreWertTextField6Action"
+                                                   prefHeight="31.0" prefWidth="123.0"/>
+                                        <TextField fx:id="scoreGesamtWertTextField2" alignment="TOP_CENTER"
+                                                   layoutX="260.0" layoutY="130.0" onAction="#scoreWertTextField2Action"
+                                                   prefHeight="31.0" prefWidth="123.0"/>
+                                        <TextField fx:id="scoreGesamtWertTextField5" alignment="TOP_CENTER"
+                                                   layoutX="260.0" layoutY="250.0" onAction="#scoreWertTextField5Action"
+                                                   prefHeight="31.0" prefWidth="123.0"/>
+                                        <TextField fx:id="scoreGesamtWertTextField4" alignment="TOP_CENTER"
+                                                   layoutX="260.0" layoutY="210.0" onAction="#scoreWertTextField4Action"
+                                                   prefHeight="31.0" prefWidth="123.0"/>
+                                        <TextField fx:id="scoreGesamtWertTextField8" alignment="TOP_CENTER"
+                                                   layoutX="260.0" layoutY="370.0" onAction="#scoreWertTextField8Action"
+                                                   prefHeight="31.0" prefWidth="123.0"/>
+                                        <TextField fx:id="scoreGesamtWertTextField10" alignment="TOP_CENTER"
+                                                   layoutX="690.0" layoutY="90.0" prefHeight="31.0" prefWidth="123.0"/>
+                                        <TextField fx:id="scoreGesamtWertTextField15" alignment="TOP_CENTER"
+                                                   layoutX="690.0" layoutY="290.0" prefHeight="31.0" prefWidth="123.0"/>
+                                        <TextField fx:id="scoreGesamtWertTextField18" alignment="TOP_CENTER"
+                                                   layoutX="690.0" layoutY="410.0" prefHeight="31.0" prefWidth="123.0"/>
+                                        <TextField fx:id="scoreGesamtWertTextField17" alignment="TOP_CENTER"
+                                                   layoutX="690.0" layoutY="370.0" prefHeight="31.0" prefWidth="123.0"/>
+                                        <TextField fx:id="scoreGesamtWertTextField16" alignment="TOP_CENTER"
+                                                   layoutX="690.0" layoutY="330.0" prefHeight="31.0" prefWidth="123.0"/>
+                                        <TextField fx:id="scoreGesamtWertTextField13" alignment="TOP_CENTER"
+                                                   layoutX="690.0" layoutY="210.0" prefHeight="31.0" prefWidth="123.0"/>
+                                        <TextField fx:id="scoreGesamtWertTextField11" alignment="TOP_CENTER"
+                                                   layoutX="690.0" layoutY="130.0" prefHeight="31.0" prefWidth="123.0"/>
+                                        <TextField fx:id="scoreGesamtWertTextField12" alignment="TOP_CENTER"
+                                                   layoutX="690.0" layoutY="170.0" prefHeight="31.0" prefWidth="123.0"/>
+                                        <TextField fx:id="scoreGesamtWertTextField14" alignment="TOP_CENTER"
+                                                   layoutX="690.0" layoutY="250.0" prefHeight="31.0" prefWidth="123.0"/>
+                                    </children>
+                                </Group>
+                                <Button fx:id="sortGesamtScoreButton" layoutX="867.0" layoutY="75.0"
+                                        mnemonicParsing="false" onAction="#sortGesamtScoreButtonAction"
+                                        text="Daten sortieren"/>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+        <Button fx:id="loadDatainTableButton" layoutX="302.0" layoutY="659.0" mnemonicParsing="false"
+                onAction="#loadDatainTableButtonAction" text="Lade Daten in Tabelle"/>
+        <Button fx:id="loadDataButton" layoutX="29.0" layoutY="659.0" mnemonicParsing="false"
+                onAction="#loadDataButtonAction" text="Lade Daten herunter"/>
+    </children>
+</Pane>
